@@ -53,7 +53,7 @@ Interestingly, the `window.location` object has been used to redirect us to `/we
 
 ![image](https://user-images.githubusercontent.com/92731777/163889653-dc745e0c-3f52-4e07-a17c-5289ecfb8a80.png)
 
-So, the reason why we haven't seen any request being made to `/request`is that the ajax request hasn't done yet before redirecting us to `/welcome`, thus resulting in the browser to discard it. [More Info](https://stackoverflow.com/questions/16961896/ajax-call-and-window-location) 
+So, the reason why we haven't seen any request being made to `/request`is that the ajax request hasn't done yet before redirecting us to `/welcome`, thus resulting in the browser to discard it. [More Info Here](https://stackoverflow.com/questions/16961896/ajax-call-and-window-location) 
 # I said login not register :
 Since we can't capture that POST request (we might if we got lucky) let's play with it using curl (i'll proxy it to burp for easier interaction) : `curl -d 'username=th3w4aba&password=3w4b4s3cuR3p4ssw@rd' https://thnbdarija-s3cured.chals.io/register -x http://127.0.0.1:8080 -k`
 
