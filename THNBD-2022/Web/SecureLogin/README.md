@@ -1,3 +1,4 @@
+**The credits for creating this challenge go to [c3p0d4y](https://twitter.com/c3p01337)**
 # Light Recon:
 Looking at the response headers we see: `Server: Werkzeug/2.0.0 Python/3.9.5`, so we're dealing with a Flask/Django web application.
 
