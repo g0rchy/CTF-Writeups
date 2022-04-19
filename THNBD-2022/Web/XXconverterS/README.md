@@ -72,9 +72,12 @@ oReq.send();
 ```
 
 Sping up your webserver to host the file and make the target server include it.
-aaand we got a hit with the file being sent back to us:
 
 ![image](https://user-images.githubusercontent.com/92731777/163900753-305c7a72-d703-4903-81e4-ad9d11ff1fc8.png)
+
+aaand we got a hit with the file being sent back to us:
+
+![image](https://user-images.githubusercontent.com/92731777/163901852-c38fb581-ca2b-476f-a594-7837ba2949ee.png)
 
 `/etc/hosts` file content: 
 
@@ -82,8 +85,6 @@ aaand we got a hit with the file being sent back to us:
 
 Local file read confirmed.
 Remember that `/flag.php` file? by default apache hosts files under `/var/www/html/`, let's check if it's there
-
-![image](https://user-images.githubusercontent.com/92731777/163901852-c38fb581-ca2b-476f-a594-7837ba2949ee.png)
 
 Same drill, edit the file to read and resend the XSS payload, after getting a hit on your local webserver base64 decode the exfil parameter's content:
 
