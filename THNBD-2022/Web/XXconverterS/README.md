@@ -55,7 +55,7 @@ Aaaaand we got a request:
 Looking at the `User-Agent` header we can see `PhantomJS/2.1.1` which is a headless browser, after googling for any known vulnerability/PoC we will come across this one: https://buer.haus/2017/06/29/escalating-xss-in-phantomjs-image-rendering-to-ssrflocal-file-read/
 
 
-TLDR; we make the server load our remote script, which reads local files using `file://` scheme, and sends the base64 encoded file back to us.
+TL;DR: We make the server load our remote script, which reads local files using `file://` scheme, and sends the base64 encoded file back to us.
 	
 `innocent.js` content:
 ```js
