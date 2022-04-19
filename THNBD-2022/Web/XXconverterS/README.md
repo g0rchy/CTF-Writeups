@@ -1,4 +1,4 @@
-**The credits for creating this challenge go to: ![0xPwny](https://twitter.com/0xpwny)**
+**The credits for creating this challenge go to: [0xPwny](https://twitter.com/0xpwny)**
 
 # Light recon:
 Looking at the response headers `Server: Apache/2.4.18 (Ubuntu)`,  and the source code (which contains a `mstafa.php`) we will assume that we're dealing with PHP web application.
