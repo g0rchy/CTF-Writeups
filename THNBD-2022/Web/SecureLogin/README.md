@@ -14,7 +14,7 @@ To do so, open the DevTools, click on "sources" or "debugger" (depending on the 
 
 ![image](https://user-images.githubusercontent.com/92731777/163889248-8369af48-78c8-4d15-a0a6-7b503df0f0df.png)
 
-Going through it quickly there is catchy line `jQuery['ajax']` (in my case it was line 345 after beautifying the code) which takes as an argument an array that mainly contains (along with other properties) a url, data that we want to send, and the type (HTTP verb) to be used, so our guess here is that the checks are done before sending our credentials to the server.
+Going through it quickly there is catchy line `jQuery['ajax']` (in my case it was line 345 after beautifying the code) which takes as an argument as an array that mainly contains (along with other properties) a url, data that we want to send, and the type (HTTP verb) to be used, so our guess here is that the checks are done before sending our credentials to the server.
 
 But before that there's an if statement and right above it a line that contains the following strings: ("getElement", "pswd" and "value"), so here we can assume that the code stores our input inside a variable.
 
@@ -59,7 +59,7 @@ Interestingly, the `window.location` object has been used to redirect us to `/we
 
 ![image](https://user-images.githubusercontent.com/92731777/163889653-dc745e0c-3f52-4e07-a17c-5289ecfb8a80.png)
 
-So, the reason why we haven't seen any request being made to `/request` while logging in is that the ajax request hasn't done yet before getting redirected  to `/welcome`, thus resulting in the browser to discard it. [More Info Here](https://stackoverflow.com/questions/16961896/ajax-call-and-window-location) 
+So, the reason why we haven't seen any request being made to `/request` while logging in is that the ajax request hasn't done yet before getting redirected  to `/welcome` (since the redirect wasn't put as a callback function to the ajax call), thus destroying the original DOM of `index.html` (resulting in the browser to discard the request). [More Info Here](https://stackoverflow.com/questions/16961896/ajax-call-and-window-location) 
 
 # I said login not register :
 Since we can't capture that POST request (we might if we got lucky) let's play with it using curl (i'll proxy it to burp for easier interaction) : `curl -d 'username=th3w4aba&password=3w4b4s3cuR3p4ssw@rd' https://thnbdarija-s3cured.chals.io/register -x http://127.0.0.1:8080 -k`
